@@ -3,6 +3,8 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Controller\CategoryController;
 use App\Http\Controllers\Controller\ProductController;
+use App\Http\Controllers\Controller\frontend\frontendController;
+
 
 
 
@@ -18,9 +20,11 @@ use App\Http\Controllers\Controller\ProductController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
+
+Route::get('/', [App\Http\Controllers\frontend\frontendController::class, 'index']);
 
 Auth::routes();
 
@@ -51,6 +55,10 @@ Route::middleware(['auth','isAdmin'])->group(function(){
 
 
     });
+    //php artisan cache:clear
+//php artisan route:cache
+//php artisan config:cache
+//php artisan view:clear
 
 
 

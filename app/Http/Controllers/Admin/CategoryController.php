@@ -78,7 +78,6 @@ class CategoryController extends Controller
                 
             //     return redirect('/dashboard')->with('status',"Category Added Successfully");
                 //return redirect()->back();
-                //1234
 
     }
 
