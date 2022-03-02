@@ -1,0 +1,63 @@
+@extends('layouts.front')
+
+@section('title')
+
+category
+@endsection
+
+@section('content')
+
+<div class="py-5">
+<div class="container">
+<div class="row">
+    <div class="col-md-12">
+       <div class="row"></div>
+    @foreach($category as $cate)
+    <div class="col-md-4 mb-3">
+        <div class="card">
+            <img src="{{asset('storage/post/'.$cate->image)}}" alt="Category image">
+            <div class="card-body">
+                <h5>{{$cate->name}} </h5>
+               <p>
+               {{ $cate->description }}  
+               </p>
+
+
+            </div>
+            
+        </div>
+    </div>
+
+
+
+
+    @endforeach
+
+
+
+
+
+    </div>
+</div>
+
+</div>
+
+
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+@endsection
+
