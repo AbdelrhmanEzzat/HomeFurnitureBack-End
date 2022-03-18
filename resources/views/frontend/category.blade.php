@@ -11,52 +11,30 @@ category
 <div class="container">
 <div class="row">
     <div class="col-md-12">
+        <h2>Featured Categories</h2>
        <div class="row"></div>
     @foreach($category as $cate)
-    <div class="col-md-4 mb-3">
-        <div class="card">
-            <img src="{{asset('storage/post/'.$cate->image)}}" alt="Category image">
-            <div class="card-body">
+    <div class="col-md-3 mb-3">
+        <a href="{{url('view-category/'.$cate->slug)}}">
+           <div class="card">
+              <img src="{{asset('storage/post/'.$cate->image)}}" alt="Category image">
+              <div class="card-body">
                 <h5>{{$cate->name}} </h5>
                <p>
                {{ $cate->description }}  
                </p>
 
 
-            </div>
+              </div>
             
-        </div>
+          </div>
+        </a>
     </div>
-
-
-
-
-    @endforeach
-
-
-
-
-
+   @endforeach
     </div>
 </div>
-
 </div>
-
-
-
-
-
 </div>
-
-
-
-
-
-
-
-
-
-
 
 
 @endsection

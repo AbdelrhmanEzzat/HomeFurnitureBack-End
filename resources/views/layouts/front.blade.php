@@ -23,6 +23,18 @@
     <link href="{{ asset('frontend/css/material-dashboard.css') }}" rel="stylesheet">
     <link href="{{ asset('frontend/css/bootstrap5.css') }}" rel="stylesheet">
     
+   <style>
+       
+     a{
+     text-decoration:none !important;
+    
+     }
+
+   </style>
+
+
+
+
 </head>
 <body>
      @include('layouts.inc.frontnavbar')

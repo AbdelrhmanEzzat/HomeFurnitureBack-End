@@ -26,6 +26,11 @@ use App\Http\Controllers\Controller\frontend\frontendController;
 
 Route::get('/', [App\Http\Controllers\frontend\frontendController::class, 'index']);
 Route::get('category', [App\Http\Controllers\frontend\frontendController::class, 'category']);
+Route::get('view-category/{slug}', [App\Http\Controllers\frontend\frontendController::class, 'viewcategory']);
+
+Route::get('category/{cate_slug}/{prod_slug}', [App\Http\Controllers\frontend\frontendController::class, 'productview']);
+
+
 
 
 
