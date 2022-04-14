@@ -49,6 +49,8 @@
 
 <script src="{{ asset('frontend/js/bootstrap.bundle.min.js') }}" ></script>
 <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+<!-- not from videos -->
+<script src="https://cdn.jsdelivr.net/jquery/1.12.4/jquery.min.js"></script>
 @if(session('status'))
 <script>
 swal("{{session('status')}}");

@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Controller\CategoryController;
 use App\Http\Controllers\Controller\ProductController;
 use App\Http\Controllers\Controller\frontend\frontendController;
+use App\Http\Controllers\Controller\frontend\CartController;
 
 
 
@@ -31,6 +32,8 @@ Route::get('view-category/{slug}', [App\Http\Controllers\frontend\frontendContro
 Route::get('category/{cate_slug}/{prod_slug}', [App\Http\Controllers\frontend\frontendController::class, 'productview']);
 
 
+//add-to-cart
+
 
 
 
@@ -38,7 +41,15 @@ Route::get('category/{cate_slug}/{prod_slug}', [App\Http\Controllers\frontend\fr
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+//Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::post('add-to-cart', [App\Http\Controllers\frontend\CartController::class, 'addProduct']);
+
+
+//Route::middleware(['auth'])->group(function(){
+
+//});
+//
+
 
 
 Route::middleware(['auth','isAdmin'])->group(function(){
