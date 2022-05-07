@@ -8,15 +8,10 @@ use Illuminate\Database\Eloquent\Model;
 class Product extends Model
 {
     use HasFactory;
-    protected $table = 'product';
+    protected $table = 'products';
     protected $fillable =[
-       'prod_id',
-       'product_name',
-       'cost',
-       'details',
-       'material',
-       'rate_id',
-       'category_id',
+       'cate_id',
+       'name',
        'slug',
        'small_description',
        'description',
@@ -30,15 +25,10 @@ class Product extends Model
        'meta_title',
        'meta_keywords',
        'meta_descrip',
-
-      
     ];
+
     public function category()
     {
-       return $this->belongsTo(Order::class,'category_id','category_id');
-    }	
-    public function rating()
-    {
-       return $this->belongsTo(Rating::class,'rate_id','rate_id');
+       return $this->belongsTo(Category::class,'cate_id','id');
     }
 }
