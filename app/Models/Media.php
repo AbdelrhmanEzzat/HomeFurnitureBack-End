@@ -26,5 +26,10 @@ class Media extends Model
     {
        return $this->belongsTo(Media_type::class,'media_type_id','media_type_id');
     }
+    public function portfile()
+    {
+       return $this->belongsTo(Portfile::class,'port_id','port_id');
+    }
+
 
 }
