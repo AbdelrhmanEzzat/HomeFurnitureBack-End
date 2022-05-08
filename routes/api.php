@@ -6,9 +6,12 @@ use App\Http\Controllers\api\ContactController;
 use App\Http\Controllers\api\ItemsController;
 use App\Http\Controllers\api\MediaController;
 use App\Http\Controllers\api\OrderController;
+use App\Http\Controllers\api\PostsController;
+use App\Http\Controllers\api\Product_imgController;
 use App\Http\Controllers\api\RatingController;
 use App\Models\Media;
 use App\Models\Post;
+use App\Models\Product_image;
 use App\Models\Rating;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -39,7 +42,7 @@ Route::get('/orders',[OrderController::class,'index']);
 Route::get('/items',[ItemsController::class,'index']);
 Route::get('/contacts',[ContactController::class,'index']);
 Route::get('/media',[MediaController::class,'index']);
-
+Route::get('/proimg',[Product_imgController::class,'index']);
 
 
 //Protected routes
