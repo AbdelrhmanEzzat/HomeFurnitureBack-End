@@ -21,6 +21,6 @@ class Designer extends Model
        'gender',
        'age',
        'password',
-       
+
     ];
 }

@@ -1,12 +1,15 @@
 <?php
 
+
+// media for Post & Portfolio
+
 namespace App\Http\Controllers\api;
 
 use App\Http\Controllers\Controller;
-use App\Models\Post;
+use App\Models\Media;
 use Illuminate\Http\Request;
 
-class PostsController extends Controller
+class MediaController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,7 +18,7 @@ class PostsController extends Controller
      */
     public function index()
     {
-       return Post::all();
+        return Media::all();
         //
     }
 

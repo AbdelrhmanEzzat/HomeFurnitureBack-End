@@ -1,5 +1,7 @@
 <?php
 
+
+// wait
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -12,6 +14,6 @@ class Rate_value extends Model
     protected $fillable =[
        'rate_value_id',
        'rate_value',
-      
+
     ];
 }

@@ -3,10 +3,9 @@
 namespace App\Http\Controllers\api;
 
 use App\Http\Controllers\Controller;
-use App\Models\Post;
 use Illuminate\Http\Request;
 
-class PostsController extends Controller
+class Rating_valueController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,7 +14,6 @@ class PostsController extends Controller
      */
     public function index()
     {
-       return Post::all();
         //
     }
 

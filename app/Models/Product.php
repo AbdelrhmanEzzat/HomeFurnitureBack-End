@@ -22,7 +22,7 @@ class Product extends Model
        'description',
        'original_price',
        'selling_price',
-       'image',
+       'image',//
        'qty',
        'tax',
        'status',
@@ -31,12 +31,12 @@ class Product extends Model
        'meta_keywords',
        'meta_descrip',
 
-      
+
     ];
     public function category()
     {
        return $this->belongsTo(Order::class,'category_id','category_id');
-    }	
+    }
     public function rating()
     {
        return $this->belongsTo(Rating::class,'rate_id','rate_id');
