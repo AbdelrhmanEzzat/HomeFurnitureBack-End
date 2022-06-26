@@ -60,14 +60,14 @@ class ProductController extends Controller
              
             return redirect('products')->with('status',"Post Added Successfully");
     }
-    public function edit($prod_id)
+    public function edit($id)
 {
-     $products=  Product::find($prod_id);
+     $products=  Product::find($id);
     return view('admin.product.edit',compact('products'));
 }
-public function update(Request $request,$prod_id)
+public function update(Request $request,$id)
 
-{ $products=  Product::find($prod_id);
+{ $products=  Product::find($id);
 
     if($request->hasFile('image')){
         $path='storage/post/products/'.$products->image;
@@ -108,9 +108,9 @@ public function update(Request $request,$prod_id)
 
 
 }
- function destroy($prod_id)
+ function destroy($id)
 {
-    $products=  Product::find($prod_id);
+    $products=  Product::find($id);
     if($products->image){
 
         $path='storage/post/products/'.$products->image;
