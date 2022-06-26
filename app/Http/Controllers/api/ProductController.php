@@ -15,8 +15,11 @@ class ProductController extends Controller
      */
     public function index()
     {
-        return Product::all();
-        //
+        //return Product::all();
+        $products = Product::orderBy('prod_id', 'DESC')->get();
+        return (compact('products'));
+
+
     }
 
     /**
@@ -40,6 +43,10 @@ class ProductController extends Controller
     public function show($id)
     {
         //
+              //return Product::find($prod_id);
+              $product = Product::find($id);
+            return (compact('product'));
+
     }
 
     /**

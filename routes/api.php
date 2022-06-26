@@ -32,10 +32,15 @@ use App\Models\NewProduct;
 
 
 // public routes
+Route::get('/user','AuthController@user')->middleware('auth:api');
+
+
 Route::post('/login',[AuthController::class,'login']);
 Route::post('/register',[AuthController::class,'register']);
 Route::post('/logout',[AuthController::class,'logout']);
+
 //Route::get('/products',[ProductController::class,'index']);
+
 Route::get('/categories',[CategoryController::class,'index']);
 Route::get('/posts',[PostsController::class,'index']);
 Route::get('/Rating',[RatingController::class,'index']);
@@ -43,22 +48,23 @@ Route::get('/orders',[OrderController::class,'index']);
 Route::get('/items',[ItemsController::class,'index']);
 Route::get('/contacts',[ContactController::class,'index']);
 Route::get('/media',[MediaController::class,'index']);
-Route::get('/proimg',[Product_imgController::class,'index']);
+Route::get('/productimage',[Product_imgController::class,'index']);
 
-//Route::get('/products', [ProductController::class, 'show']);
+//Route::get('products/{id}', 'ProductController@show');
+
+//Route::get('/products/{prod_id}', [ProductController::class, 'show']);
 
 //Route::get('products/{id}', [ProductController::class,'show']);
 
-Route::resource('products',ProductController::class);
+//Route::resource('/products',ProductController::class);
+
+Route::apiResource('/products', 'ProductController');
+
+
 
 //Protected routes
 Route::group(['middleware'=> ['auth:sanctum']], function(){
-
-
-
-
 });
-
 
 
 
