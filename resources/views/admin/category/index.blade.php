@@ -22,15 +22,15 @@
     <tbody>
         @foreach($category as $item)
         <tr>
-            <td>{{ $item->id }}</td>
-            <td>{{ $item->name }}</td>
+            <td>{{ $item->category_id }}</td>
+            <td>{{ $item->category_name }}</td>
             <td>{{ $item->description }}</td>
             <td>
                 <img src="{{asset('storage/post/'.$item->image) }}" class="w-50" alt="Image here"> 
             </td>
             <td>
-                <a href="{{ url('edit-category/'.$item->id) }}" class="btn btn-primary">Edit</a>
-                <a href="{{ url('delete-category/'.$item->id) }}" class="btn btn-danger">Delete</a>
+                <a href="{{ url('edit-category/'.$item->category_id) }}" class="btn btn-primary">Edit</a>
+                <a href="{{ url('delete-category/'.$item->category_id) }}" class="btn btn-danger">Delete</a>
             </td>
         </tr>
         @endforeach

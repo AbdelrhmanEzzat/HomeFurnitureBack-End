@@ -16,11 +16,11 @@
             <div class="row">
                 <div class="col-md-12 mb-3">
 
-                <select class="form-select" name="cate_id">
+                <select class="form-select" name="category_id">
                     <option value=''>Select a Category </option>
                     @foreach($category as $item)
 
-                    <option value="{{$item->id}}">{{$item->name}}</option>
+                    <option value="{{$item->category_id}}">{{$item->category_name}}</option>
                     @endforeach
 
                     </select>                
@@ -28,7 +28,7 @@
 
                 <div class="col-md-6 mb-3">
                     <label for="">Name</label>
-                    <input type="text" class="form-control" name="name">
+                    <input type="text" class="form-control" name="product_name">
                 </div>
                 <div class="col-md-6 mb-3">
                     <label for="">Slug</label>

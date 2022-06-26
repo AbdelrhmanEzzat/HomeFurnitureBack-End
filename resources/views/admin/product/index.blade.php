@@ -23,9 +23,9 @@
     <tbody>
         @foreach($products as $item)
         <tr>
-            <td>{{ $item->id }}</td>
-            <td>{{ $item->category->name }}</td>
-            <td>{{ $item->name }}</td>
+            <td>{{ $item->prod_id}}</td>
+            <td>{{ $item->category->category_name }}</td>
+            <td>{{ $item->product_name }}</td>
             <td>{{ $item->selling_price }}</td>
             <td>
                 <img src="{{asset('storage/post/products/'.$item->image) }}" class="w-50" alt="Image here"> 

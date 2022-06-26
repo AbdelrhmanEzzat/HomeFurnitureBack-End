@@ -14,6 +14,11 @@ class Rate_value extends Model
     protected $fillable =[
        'rate_value_id',
        'rate_value',
+       'user_id'
 
     ];
+    public function user()
+    {
+       return $this->belongsTo(user::class,'user_id','id');
+    }
 }

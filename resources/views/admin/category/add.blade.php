@@ -17,7 +17,7 @@
 
                 <div class="col-md-6 mb-3">
                     <label for="">Name</label>
-                    <input type="text" class="form-control" name="name">
+                    <input type="text" class="form-control" name="category_name">
                 </div>
                 <div class="col-md-6 mb-3">
                     <label for="">Slug</label>

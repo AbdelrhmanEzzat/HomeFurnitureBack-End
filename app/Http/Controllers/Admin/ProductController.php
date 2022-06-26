@@ -35,9 +35,9 @@ class ProductController extends Controller
             $products->image= $filename;
             
                 }
-                $products->cate_id = $request->input('cate_id');
-                $products->name = $request->input('name');
+                $products->category_id = $request->input('category_id');
 
+                $products->product_name = $request->input('product_name');
                 $products->slug = $request->input('slug');
                 $products->small_description = $request->input('small_description');
                 $products->description = $request->input('description');
@@ -45,6 +45,7 @@ class ProductController extends Controller
                 $products->selling_price = $request->input('selling_price') ;
                 $products->tax = $request->input('tax') ;
                 $products->qty = $request->input('qty') ;
+                $products->rate_id = $request->input('rate_id') ;
 
 
 
@@ -59,14 +60,14 @@ class ProductController extends Controller
              
             return redirect('products')->with('status',"Post Added Successfully");
     }
-    public function edit($id)
+    public function edit($prod_id)
 {
-     $products=  Product::find($id);
+     $products=  Product::find($prod_id);
     return view('admin.product.edit',compact('products'));
 }
-public function update(Request $request,$id)
+public function update(Request $request,$prod_id)
 
-{ $products=  Product::find($id);
+{ $products=  Product::find($prod_id);
 
     if($request->hasFile('image')){
         $path='storage/post/products/'.$products->image;
@@ -83,7 +84,7 @@ public function update(Request $request,$id)
             $products->image= $filename;
 
         }
-        $products->name = $request->input('name');
+        $products->product_name = $request->input('product_name');
 
         $products->slug = $request->input('slug');
         $products->small_description = $request->input('small_description');
@@ -107,9 +108,9 @@ public function update(Request $request,$id)
 
 
 }
- function destroy($id)
+ function destroy($prod_id)
 {
-    $products=  Product::find($id);
+    $products=  Product::find($prod_id);
     if($products->image){
 
         $path='storage/post/products/'.$products->image;

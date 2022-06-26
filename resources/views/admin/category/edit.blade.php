@@ -11,14 +11,14 @@
         </div>
     <div class="card-body">
 
-        <form action="{{url('update-category/'.$category->id)}}"  method="POST"  enctype="multipart/form-data" >
+        <form action="{{url('update-category/'.$category->category_id)}}"  method="POST"  enctype="multipart/form-data" >
             @csrf
             @method('PUT')
             <div class="row">
 
                 <div class="col-md-6 mb-3">
                     <label for="">Name</label>
-                    <input type="text" value="{{ $category->name }}" class="form-control" name="name">
+                    <input type="text" value="{{ $category->category_name }}" class="form-control" name="category_name">
                 </div>
                 <div class="col-md-6 mb-3">
                     <label for="">Slug</label>
