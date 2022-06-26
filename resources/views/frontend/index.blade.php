@@ -21,7 +21,6 @@ welcome to Freede
                 <span class="float-start">{{$prod->selling_price}}</span>
                 <span class="float-end"> <s> {{$prod->original_price}} </s></span>
             </div>
-            
         </div>
     </div>
     @endforeach
@@ -41,10 +40,9 @@ welcome to Freede
             <div class="card-body">
                 <h5>{{$tcategory->name}} </h5>
                 <p>
-               {{ $tcategory->description }}  
+               {{ $tcategory->description }}
                </p>
             </div>
-            
         </div>
         </a>
     </div>

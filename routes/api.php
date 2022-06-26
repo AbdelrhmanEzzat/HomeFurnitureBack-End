@@ -11,10 +11,12 @@ use App\Http\Controllers\api\Product_imgController;
 use App\Http\Controllers\api\RatingController;
 use App\Models\Media;
 use App\Models\Post;
+use App\Models\Product;
 use App\Models\Product_image;
 use App\Models\Rating;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Models\NewProduct;
 
 /*
 |--------------------------------------------------------------------------
@@ -33,7 +35,7 @@ use Illuminate\Support\Facades\Route;
 Route::post('/login',[AuthController::class,'login']);
 Route::post('/register',[AuthController::class,'register']);
 Route::post('/logout',[AuthController::class,'logout']);
-Route::get('/products',[ProductController::class,'index']);
+//Route::get('/products',[ProductController::class,'index']);
 Route::get('/categories',[CategoryController::class,'index']);
 Route::get('/posts',[PostsController::class,'index']);
 Route::get('/Rating',[RatingController::class,'index']);
@@ -43,6 +45,11 @@ Route::get('/contacts',[ContactController::class,'index']);
 Route::get('/media',[MediaController::class,'index']);
 Route::get('/proimg',[Product_imgController::class,'index']);
 
+//Route::get('/products', [ProductController::class, 'show']);
+
+//Route::get('products/{id}', [ProductController::class,'show']);
+
+Route::resource('products',ProductController::class);
 
 //Protected routes
 Route::group(['middleware'=> ['auth:sanctum']], function(){
