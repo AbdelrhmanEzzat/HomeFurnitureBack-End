@@ -32,7 +32,7 @@ class CategoryController extends Controller
         $category->image= $filename;
         
             }
-            $category->name = $request->input('name');
+            $category->category_name = $request->input('category_name');
             $category->slug = $request->input('slug');
             $category->description = $request->input('description');
            $category->status = $request->input('status') == TRUE ? '1':'0';
@@ -105,7 +105,7 @@ public function update(Request $request,$id)
             $category->image= $filename;
 
         }
-                   $category->name = $request->input('name');
+                   $category->category_name = $request->input('category_name');
                     $category->slug = $request->input('slug');
                     $category->description = $request->input('description');
                    $category->status = $request->input('status') == TRUE ? '1':'0';

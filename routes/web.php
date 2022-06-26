@@ -57,16 +57,16 @@ Route::middleware(['auth','isAdmin'])->group(function(){
     Route::get('categories','Admin\CategoryController@index');
     Route::get('add-category','Admin\CategoryController@add');
     Route::post('insert-category','Admin\CategoryController@insert');
-    Route::get('edit-category/{id}',[App\Http\Controllers\Admin\CategoryController::class,'edit']);
-    Route::put('update-category/{id}',[App\Http\Controllers\Admin\CategoryController::class,'update']);
-    Route::get('delete-category/{id}',[App\Http\Controllers\Admin\CategoryController::class,'destroy']);
+    Route::get('edit-category/{category_id}',[App\Http\Controllers\Admin\CategoryController::class,'edit']);
+    Route::put('update-category/{category_id}',[App\Http\Controllers\Admin\CategoryController::class,'update']);
+    Route::get('delete-category/{category_id}',[App\Http\Controllers\Admin\CategoryController::class,'destroy']);
 
     Route::get('products',[App\Http\Controllers\Admin\ProductController::class,'index']);
     Route::get('add-products',[App\Http\Controllers\Admin\ProductController::class,'add']);
     Route::post('insert-product',[App\Http\Controllers\Admin\ProductController::class,'insert']);
-    Route::get('edit-product/{id}',[App\Http\Controllers\Admin\ProductController::class,'edit']);
-    Route::put('update-product/{id}',[App\Http\Controllers\Admin\ProductController::class,'update']);
-    Route::get('delete-product/{id}',[App\Http\Controllers\Admin\ProductController::class,'destroy']);
+    Route::get('edit-product/{prod_id}',[App\Http\Controllers\Admin\ProductController::class,'edit']);
+    Route::put('update-product/{prod_id}',[App\Http\Controllers\Admin\ProductController::class,'update']);
+    Route::get('delete-product/{prod_id}',[App\Http\Controllers\Admin\ProductController::class,'destroy']);
 
 
 
@@ -76,6 +76,18 @@ Route::middleware(['auth','isAdmin'])->group(function(){
 
 
     });
+
+    // Route::middleware(['auth','isDesigner'])->group(function(){
+    //     Route::get('/', [App\Http\Controllers\frontend\frontendController::class, 'index']);
+
+    // });
+
+
+
+
+
+    //Route::get('/', [App\Http\Controllers\frontend\frontendController::class, 'index']);
+    //isDesigner
     //php artisan cache:clear
 //php artisan route:cache
 //php artisan config:cache
