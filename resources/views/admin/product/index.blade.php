@@ -31,8 +31,8 @@
                 <img src="{{asset('storage/post/products/'.$item->image) }}" class="w-50" alt="Image here"> 
             </td>
             <td>
-                <a href="{{ url('edit-product/'.$item->id) }}" class="btn btn-primary">Edit</a>
-                <a href="{{ url('delete-product/'.$item->id) }}" class="btn btn-danger">Delete</a>
+                <a href="{{ url('edit-product/'.$item->prod_id) }}" class="btn btn-primary">Edit</a>
+                <a href="{{ url('delete-product/'.$item->prod_id) }}" class="btn btn-danger">Delete</a>
             </td>
         </tr>
         @endforeach

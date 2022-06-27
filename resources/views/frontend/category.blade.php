@@ -19,7 +19,7 @@ category
            <div class="card">
               <img src="{{asset('storage/post/'.$cate->image)}}" alt="Category image">
               <div class="card-body">
-                <h5>{{$cate->name}} </h5>
+                <h5>{{$cate->category_name}} </h5>
                <p>
                {{ $cate->description }}  
                </p>

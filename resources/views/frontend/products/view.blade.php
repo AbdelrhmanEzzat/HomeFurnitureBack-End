@@ -1,12 +1,12 @@
 @extends('layouts.front')
 
-@section('title',$products->name)
+@section('title',$products->product_name)
 
 
 @section('content')
 <div class="py-3 mb-4 shadow-sm bg-warning border-top">
     <div class="container">
-      <h6 class="mb-0">   Collections/{{$products->category->name}} / {{$products->name}} </h6> 
+      <h6 class="mb-0">   Collections/{{$products->category->category_name}} / {{$products->product_name}} </h6> 
     </div>
 </div>
 <div class="container">
@@ -19,7 +19,7 @@
                                         </div>
                                <div class="col-md-8">
                                             <h2 class="mb-0">
-                                                {{$products->name}}
+                                                {{$products->product_name}}
                                                 @if($products->trending=='1')
                                                 <label style="font-size: 16px;" class="float-end badge bg-danger tranding_tag">Trending</label>
                                                 @endif
