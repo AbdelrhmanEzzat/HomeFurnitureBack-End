@@ -72,8 +72,8 @@ Route::get('/portfolio/{port_id}', [PortfolioController::class, 'show']);
 
 
 //Protected routes
-Route::group(['middleware'=> ['auth:sanctum']], function(){
-});
+// Route::group(['middleware'=> ['auth:sanctum']], function(){
+// });
 
 
 
