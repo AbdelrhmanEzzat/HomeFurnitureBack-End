@@ -9,14 +9,15 @@ class Portfile extends Model
 {
     use HasFactory;
     protected $table = 'portfile';
+    protected $primaryKey = 'port_id';
+
     protected $fillable =[
        'port_id',
        'port_title',
        'port_body',
        'published_date',
-       'port_image',
        'designer_id',
-        
+
     ];
     public function designer()
     {

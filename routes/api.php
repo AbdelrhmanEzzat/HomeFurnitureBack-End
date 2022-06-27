@@ -6,9 +6,11 @@ use App\Http\Controllers\api\ContactController;
 use App\Http\Controllers\api\ItemsController;
 use App\Http\Controllers\api\MediaController;
 use App\Http\Controllers\api\OrderController;
+use App\Http\Controllers\api\PortfolioController;
 use App\Http\Controllers\api\PostsController;
 use App\Http\Controllers\api\Product_imgController;
 use App\Http\Controllers\api\RatingController;
+use App\Http\Controllers\api\UserController;
 use App\Models\Media;
 use App\Models\Post;
 use App\Models\Product;
@@ -39,32 +41,39 @@ Route::post('/login',[AuthController::class,'login']);
 Route::post('/register',[AuthController::class,'register']);
 Route::post('/logout',[AuthController::class,'logout']);
 
-//Route::get('/products',[ProductController::class,'index']);
+
 
 Route::get('/categories',[CategoryController::class,'index']);
-Route::get('/posts',[PostsController::class,'index']);
 Route::get('/Rating',[RatingController::class,'index']);
 Route::get('/orders',[OrderController::class,'index']);
 Route::get('/items',[ItemsController::class,'index']);
-Route::get('/contacts',[ContactController::class,'index']);
 Route::get('/media',[MediaController::class,'index']);
 Route::get('/productimage',[Product_imgController::class,'index']);
 
-//Route::get('products/{id}', 'ProductController@show');
 
-//Route::get('/products/{prod_id}', [ProductController::class, 'show']);
+//product
+Route::get('/products',[ProductController::class,'index']);
+Route::get('/products/{prod_id}', [ProductController::class, 'show']);
+//USER
+Route::get('/users',[UserController::class,'index']);
+Route::get('/users/{id}', [UserController::class, 'show']);
 
-//Route::get('products/{id}', [ProductController::class,'show']);
+//posts
+Route::get('/posts',[PostsController::class,'index']);
+Route::get('/posts/{post_id}', [PostsController::class, 'show']);
 
-//Route::resource('/products',ProductController::class);
+//Contact
+Route::get('/contacts',[ContactController::class,'index']);
+Route::get('/contacts/{contact_id}', [ContactController::class, 'show']);
 
-Route::apiResource('/products', 'ProductController');
-
+//portolio
+Route::get('/portfolio',[PortfolioController::class,'index']);
+Route::get('/portfolio/{port_id}', [PortfolioController::class, 'show']);
 
 
 //Protected routes
-Route::group(['middleware'=> ['auth:sanctum']], function(){
-});
+// Route::group(['middleware'=> ['auth:sanctum']], function(){
+// });
 
 
 

@@ -9,13 +9,15 @@ class Contact extends Model
 {
     use HasFactory;
     protected $table = 'contact';
+    protected $primaryKey = 'contact_id';
+
     protected $fillable =[
        'contact_id',
        'customer_id',
        'designer_id',
        'message',
        'contact_date',
-       
+
     ];
     public function designer()
     {
