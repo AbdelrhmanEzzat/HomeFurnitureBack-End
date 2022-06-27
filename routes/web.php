@@ -43,11 +43,16 @@ Auth::routes();
 
 //Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::post('add-to-cart', [App\Http\Controllers\frontend\CartController::class, 'addProduct']);
+Route::post('delete-cart-item', [App\Http\Controllers\frontend\CartController::class, 'deleteproduct']);
+    Route::post('update-cart', [App\Http\Controllers\frontend\CartController::class, 'updatecart']);
+
+Route::middleware(['auth'])->group(function(){
+    Route::get('cart', [App\Http\Controllers\frontend\CartController::class, 'viewcart']);
+    Route::get('checkout', [App\Http\Controllers\frontend\CheckoutController::class, 'index']);
+    Route::post('place-order', [App\Http\Controllers\frontend\CheckoutController::class, 'placeorder']);
 
 
-//Route::middleware(['auth'])->group(function(){
-
-//});
+});
 //
 
 
