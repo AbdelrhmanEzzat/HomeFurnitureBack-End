@@ -6,6 +6,8 @@ use App\Models\Product;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
+use function GuzzleHttp\Promise\all;
+
 class ProductController extends Controller
 {
     /**
@@ -15,9 +17,8 @@ class ProductController extends Controller
      */
     public function index()
     {
-        //return Product::all();
-        $products = Product::orderBy('prod_id', 'DESC')->get();
-        return (compact('products'));
+        return Product::all();
+
 
 
     }
@@ -44,9 +45,10 @@ class ProductController extends Controller
     {
         //
               //return Product::find($prod_id);
-              $product = Product::find($id);
-            return (compact('product'));
+            //   $product = Product::find($id);
+            // return response()->json([(compact('product'))]) ;
 
+            return  Product::find($id);
     }
 
     /**

@@ -3,11 +3,10 @@
 namespace App\Http\Controllers\api;
 
 use App\Http\Controllers\Controller;
-use App\Models\Contact;
+use App\Models\User;
 use Illuminate\Http\Request;
-use PhpParser\Node\Expr\AssignOp\Concat;
 
-class ContactController extends Controller
+class UserController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -17,7 +16,7 @@ class ContactController extends Controller
     public function index()
     {
         //
-        return Contact::all();
+        return User::all();
     }
 
     /**
@@ -40,11 +39,8 @@ class ContactController extends Controller
     public function show($id)
     {
         //
-        // $contact = Contact::find($id);
-        // return (compact('contact'));
-        return  Contact::find($id);
-
-    }
+        return  User::find($id);
+       }
 
     /**
      * Update the specified resource in storage.

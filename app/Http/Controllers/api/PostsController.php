@@ -15,8 +15,11 @@ class PostsController extends Controller
      */
     public function index()
     {
-       return Post::all();
-        //
+        return Post::all();
+
+        // $posts = Post::orderBy('post_id', 'ASC')->get();
+        // return (compact('posts'));
+                //
     }
 
     /**
@@ -38,8 +41,15 @@ class PostsController extends Controller
      */
     public function show($id)
     {
+       // $post = Post::find($id);
+        // return (compact('post'));
+        // return response()->json ([
+        //     'post' => $post ]);
+       // $product = Product::find($id);
+        //return response()->json([]) ;
         //
-    }
+        return  Post::find($id);
+     }
 
     /**
      * Update the specified resource in storage.

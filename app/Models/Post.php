@@ -9,6 +9,7 @@ class Post extends Model
 {
     use HasFactory;
     protected $table = 'post';
+    protected $primaryKey = 'post_id';
     protected $fillable =[
        'post_id',
        'post_title',
@@ -16,10 +17,10 @@ class Post extends Model
        'published_date',
        'designer_id',
 
-       
+
     ];
 public function designer()
     {
        return $this->belongsTo(Designer::class,'designer_id','designer_id');
-    }	    				
+    }
 }

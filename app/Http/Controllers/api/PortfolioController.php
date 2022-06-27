@@ -15,7 +15,10 @@ class PortfolioController extends Controller
      */
     public function index()
     {
+
         return Portfile::all();
+        // $portfolios = Portfile::orderBy('port_id', 'ASC')->get();
+        // return (compact('portfolios'));
         //
     }
 
@@ -28,6 +31,7 @@ class PortfolioController extends Controller
     public function store(Request $request)
     {
         //
+
     }
 
     /**
@@ -39,6 +43,10 @@ class PortfolioController extends Controller
     public function show($id)
     {
         //
+        // $portfolio = Portfile::find($id);
+        // return (compact('portfolio'));
+        return  Portfile::find($id);
+
     }
 
     /**
