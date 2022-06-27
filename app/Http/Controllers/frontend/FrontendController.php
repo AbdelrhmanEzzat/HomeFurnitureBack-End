@@ -13,8 +13,8 @@ class FrontendController extends Controller
   {
 
 
-    $featured_products= Product::Where('trending','1')->take(5)->get();
-    $trending_category=Category::Where('popular','1')->take(5)->get();
+    $featured_products= Product::Where('trending','1')->take(7)->get();
+    $trending_category= Category::Where('popular','1')->take(7)->get();
 
       return view ('frontend.index',compact('featured_products','trending_category'));
   }
@@ -31,7 +31,7 @@ class FrontendController extends Controller
       { 
         $category=Category::where('slug',$slug)->first(); 
           
-        $products= Product::Where('cate_id',$category->id)->where('status','0')->get();
+        $products= Product::Where('category_id',$category->category_id)->where('status','0')->get();
         
         return view('frontend.products.index',compact('category','products'));
       }

@@ -27,7 +27,7 @@
 
                 <div class="col-md-6 mb-3">
                     <label for="">Name</label>
-                    <input type="text" class="form-control" value="{{$products->name}}" name="product_name">
+                    <input type="text" class="form-control" value="{{$products->product_name}}" name="product_name">
                 </div>
                 <div class="col-md-6 mb-3">
                     <label for="">Slug</label>

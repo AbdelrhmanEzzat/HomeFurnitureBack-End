@@ -89,7 +89,7 @@ Route::middleware(['auth','isAdmin'])->group(function(){
     //Route::get('/', [App\Http\Controllers\frontend\frontendController::class, 'index']);
     //isDesigner
     //php artisan cache:clear
-    //
+
 //php artisan route:cache
 //php artisan config:cache
 //php artisan view:clear

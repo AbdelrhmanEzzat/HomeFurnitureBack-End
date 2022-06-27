@@ -17,7 +17,7 @@ welcome to Freede
         <div class="card">
             <img src="{{asset('storage/post/products/'.$prod->image)}}" alt="product image">
             <div class="card-body">
-                <h5>{{$prod->name}} </h5>
+                <h5>{{$prod->product_name}} </h5>
                 <span class="float-start">{{$prod->selling_price}}</span>
                 <span class="float-end"> <s> {{$prod->original_price}} </s></span>
             </div>
@@ -38,7 +38,7 @@ welcome to Freede
         <div class="card">
             <img src="{{asset('storage/post/'.$tcategory->image)}}" alt="product image">
             <div class="card-body">
-                <h5>{{$tcategory->name}} </h5>
+                <h5>{{$tcategory->category_name}} </h5>
                 <p>
                {{ $tcategory->description }}
                </p>

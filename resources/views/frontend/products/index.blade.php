@@ -2,7 +2,7 @@
 
 @section('title')
 
-{{$category->name}}
+{{$category->category_name}}
 @endsection
 
 @section('content')
@@ -21,7 +21,7 @@
             <a href="{{url('category/'.$category->slug.'/'.$prod->slug)}}">
             <img src="{{asset('storage/post/products/'.$prod->image)}}" class="w-100" alt="product image">
             <div class="card-body">
-                <h5>{{$prod->name}} </h5>
+                <h5>{{$prod->product_name}} </h5>
                 <span class="float-start">{{$prod->selling_price}}</span>
                 <span class="float-end"> <s> {{$prod->original_price}} </s></span>
             </div>
