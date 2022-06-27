@@ -13,7 +13,7 @@
             <a class="nav-link" href="{{ url('/dashboard') }}">
               <i class="material-icons">dashboard</i>
               <p>Dashboard</p>
-              
+
             </a>
           </li>
           <li class="nav-item {{Request::is('categories') ? 'active':''}}">
@@ -31,13 +31,13 @@
           <li class="nav-item {{Request::is('products') ? 'active':''}}">
             <a class="nav-link" href="{{ url('products') }}">
               <i class="material-icons">photo_filter</i>
-              <p>Posts</p>
+              <p>products</p>
             </a>
           </li>
           <li class="nav-item {{Request::is('add-products') ? 'active':''}}">
             <a class="nav-link" href="{{ url('add-products') }}">
               <i class="material-icons">filter_vintage</i>
-              <p>Add Posts</p>
+              <p>Add Products</p>
             </a>
           </li>
           <li class="nav-item {{Request::is('#') ? 'active':''}}">
@@ -46,6 +46,6 @@
               <p>Typography</p>
             </a>
           </li>
-          
+
       </div>
     </div>
